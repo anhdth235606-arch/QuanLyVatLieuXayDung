@@ -15,7 +15,7 @@ namespace QuanLyVatLieuXayDung
 {
     public partial class FormVL : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-43U7GJ9\\SQLEXPRESS;Initial Catalog=QuanLyVatLieuXayDung;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=katoridesu ;Initial Catalog=QuanLyVatLieuXayDung;Integrated Security=True");
 
         public FormVL()
         {
