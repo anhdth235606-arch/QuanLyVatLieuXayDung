@@ -42,9 +42,9 @@
             this.label1.Location = new System.Drawing.Point(108, 101);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
+            this.label1.Size = new System.Drawing.Size(129, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "eqwkeqwk";
+            this.label1.Text = "Tên Đăng Nhập";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
