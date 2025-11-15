@@ -34,5 +34,10 @@ namespace QuanLyVatLieuXayDung
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace QuanLyVatLieuXayDung
 {
     public partial class FormKhoHang : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=KATORIDESU;Initial Catalog=QuanLyVatLieuXayDung;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-43U7GJ9\\SQLEXPRESS;Initial Catalog=QuanLyVatLieuXayDung;Integrated Security=True");
 
         public FormKhoHang()
         {
