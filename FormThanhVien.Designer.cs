@@ -42,6 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbVaitro = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguoiDung)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +58,11 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(585, 147);
+            this.btnXoa.Location = new System.Drawing.Point(585, 189);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 20;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Text = "Thoát";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -169,11 +170,22 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Vai Trò";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(585, 147);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Xóa ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormThanhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbVaitro);
             this.Controls.Add(this.txtDangNhap);
@@ -213,5 +225,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbVaitro;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

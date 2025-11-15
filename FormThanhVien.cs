@@ -178,5 +178,48 @@ namespace QuanLyVatLieuXayDung
                 // Application.Exit(); 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int maNguoiDung = int.Parse(txtMa.Text); // txtMa là textbox chứa mã người dùng
+
+                DialogResult dialog = MessageBox.Show(
+                    "Bạn có chắc chắn muốn xóa thành viên này?",
+                    "Xác nhận xóa",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+                if (dialog == DialogResult.No) return;
+
+                string deleteQuery = "DELETE FROM NguoiDung WHERE MaNguoiDung = @MaNguoiDung";
+                using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaNguoiDung", maNguoiDung);
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Xóa thành viên thành công!");
+                        dgvNguoiDung.DataSource = LoadNguoiDung();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy thành viên để xóa!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa thành viên: " + ex.Message);
+            }
+            // Xóa trắng input sau khi xóa
+            txtMa.Clear();
+            txtDangNhap.Clear();
+            txtTen.Clear();
+            txtMk.Clear();
+            cbVaitro.SelectedIndex = -1;
+        }
     }
 }

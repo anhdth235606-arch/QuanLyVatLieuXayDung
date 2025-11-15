@@ -203,6 +203,12 @@
     <Compile Include="FormNCC.Designer.cs">
       <DependentUpon>FormNCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhap.Designer.cs">
+      <DependentUpon>FormNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThanhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,12 @@
     <Compile Include="FormVL.Designer.cs">
       <DependentUpon>FormVL.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXuat.Designer.cs">
+      <DependentUpon>FormXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyVatLieuXayDungDataSet.Designer.cs">
@@ -224,6 +236,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCTN.resx">
+      <DependentUpon>FormCTN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCTX.resx">
       <DependentUpon>FormCTX.cs</DependentUpon>
@@ -237,11 +252,17 @@
     <EmbeddedResource Include="FormNCC.resx">
       <DependentUpon>FormNCC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNhap.resx">
+      <DependentUpon>FormNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThanhVien.resx">
       <DependentUpon>FormThanhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVL.resx">
       <DependentUpon>FormVL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXuat.resx">
+      <DependentUpon>FormXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

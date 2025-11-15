@@ -191,7 +191,11 @@ Values(
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string  maVLxoa = txtmaVL.Text;
+            DialogResult dialog = MessageBox.Show("Bạn có chắc chắn muốn xóa không ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog == DialogResult.No) return;
+
+
+            string maVLxoa = txtmaVL.Text;
             string deletequery = "DELETE FROM VatLieu WHERE MaVatLieu=@MaVatLieu ";
             using (SqlCommand cmd = new SqlCommand(deletequery, conn))
             {
