@@ -34,5 +34,24 @@ namespace QuanLyVatLieuXayDung
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có muốn đóng chương trình không?", "Thông báo",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
+        }
     }
 }
