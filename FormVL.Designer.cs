@@ -181,11 +181,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(440, 51);
+            this.label8.Location = new System.Drawing.Point(418, 51);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 16);
+            this.label8.Size = new System.Drawing.Size(112, 16);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Nhà cung cấp";
+            this.label8.Text = "Mã Nhà cung cấp";
             // 
             // txtNCC
             // 

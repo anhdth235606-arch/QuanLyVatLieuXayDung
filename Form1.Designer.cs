@@ -31,6 +31,7 @@
             this.btnVatLieu = new System.Windows.Forms.Button();
             this.btnNCC = new System.Windows.Forms.Button();
             this.btnKho = new System.Windows.Forms.Button();
+            this.btnNgDung = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVatLieu
@@ -51,6 +52,7 @@
             this.btnNCC.TabIndex = 1;
             this.btnNCC.Text = "Nhà Cung Cấp";
             this.btnNCC.UseVisualStyleBackColor = true;
+            this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
             // 
             // btnKho
             // 
@@ -62,11 +64,22 @@
             this.btnKho.UseVisualStyleBackColor = true;
             this.btnKho.Click += new System.EventHandler(this.btnKho_Click);
             // 
+            // btnNgDung
+            // 
+            this.btnNgDung.Location = new System.Drawing.Point(288, 86);
+            this.btnNgDung.Name = "btnNgDung";
+            this.btnNgDung.Size = new System.Drawing.Size(116, 23);
+            this.btnNgDung.TabIndex = 3;
+            this.btnNgDung.Text = "Người Dùng ";
+            this.btnNgDung.UseVisualStyleBackColor = true;
+            this.btnNgDung.Click += new System.EventHandler(this.btnNgDung_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNgDung);
             this.Controls.Add(this.btnKho);
             this.Controls.Add(this.btnNCC);
             this.Controls.Add(this.btnVatLieu);
@@ -82,6 +95,7 @@
         private System.Windows.Forms.Button btnVatLieu;
         private System.Windows.Forms.Button btnNCC;
         private System.Windows.Forms.Button btnKho;
+        private System.Windows.Forms.Button btnNgDung;
     }
 }
 

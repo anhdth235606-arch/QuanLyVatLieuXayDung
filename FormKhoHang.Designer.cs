@@ -103,11 +103,11 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(549, 48);
+            this.btnThem.Location = new System.Drawing.Point(549, 98);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 7;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Cập Nhật";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -119,6 +119,7 @@
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnNhap
             // 
@@ -138,15 +139,17 @@
             this.btnXuat.TabIndex = 10;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(549, 98);
+            this.btnCapNhat.Location = new System.Drawing.Point(549, 48);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(75, 23);
             this.btnCapNhat.TabIndex = 11;
-            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.Text = "Thêm";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // FormKhoHang
             // 

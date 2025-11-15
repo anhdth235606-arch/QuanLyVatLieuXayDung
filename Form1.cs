@@ -40,6 +40,18 @@ namespace QuanLyVatLieuXayDung
             FormKhoHang f3 = new FormKhoHang();
             f3.ShowDialog();
         }
+
+        private void btnNCC_Click(object sender, EventArgs e)
+        {
+            FormNCC f4 = new FormNCC();
+            f4.ShowDialog();
+        }
+
+        private void btnNgDung_Click(object sender, EventArgs e)
+        {
+            FormThanhVien f5 = new FormThanhVien();
+            f5.ShowDialog();
+        }
     }
     }
 

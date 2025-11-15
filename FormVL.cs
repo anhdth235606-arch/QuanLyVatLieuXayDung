@@ -41,49 +41,68 @@ namespace QuanLyVatLieuXayDung
         {
             try
             {
+                string maVLMoi = txtmaVL.Text;
+
                 string tenVLMoi = txttenVL.Text;
-                decimal  giaN = decimal.Parse(txtNhap.Text);
-                decimal  giaB = decimal.Parse(txtBan.Text);
+                decimal giaN = decimal.Parse(txtNhap.Text);
+                decimal giaB = decimal.Parse(txtBan.Text);
                 string DonVT = txtDonVT.Text;
-                int  NhaCC = int.Parse(txtNCC.Text);
-                int  soLT = int.Parse(txtSLT.Text);
-
-                string insertQuery = @"Insert into VatLieu(
-TenVatLieu,DonViTinh,GiaNhap,GiaBan,SoLuongTon,MaNhaCungCap)
-Values(
-@TenVatLieu,@DonViTinh,@GiaNhap,@GiaBan,@SoluongTon,@MaNhaCungCap)";
-
-                using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                int NhaCC = int.Parse(txtNCC.Text);
+                int soLT = int.Parse(txtSLT.Text);
+                string checkQuery = " SELECT COUNT(*)  FROM VatLieu    WHERE MaVatLieu = @MaVatLieu";
+                using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
-                    cmd.Parameters.AddWithValue("@TenVatLieu", tenVLMoi);                    cmd.Parameters.AddWithValue("@DonViTinh", DonVT);
-                    cmd.Parameters.AddWithValue("@GiaNhap", giaN);
-                    
+                    checkCmd.Parameters.AddWithValue("@MaVatLieu", maVLMoi);
 
-                    cmd.Parameters.AddWithValue("@GiaBan", giaB);
-                  
+                    // Thực thi và lấy về số lượng bản ghi (0 hoặc 1)
+                    int count = (int)checkCmd.ExecuteScalar();
 
-                    cmd.Parameters.AddWithValue("@SoLuongTon", soLT);
-                    cmd.Parameters.AddWithValue("MaNhaCungCap", NhaCC);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
+                    if (count > 0)
                     {
-                        MessageBox.Show("Thêm vật liệu thành công!");
+                        // Nếu đã tồn tại
+                        MessageBox.Show("Mã Vật Liệu này đã tồn tại trong hệ thống. Vui lòng nhập mã khác!", "Lỗi Trùng Mã", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtmaVL.Clear();
+                        txtmaVL.Focus();
+                        return; // Ngừng thực thi nếu mã bị trùng
 
-                        // 5. Tải lại DataGridView sau khi thêm
-                        dgvVL.DataSource = LoadData();
-
-                        // (Tùy chọn) Gọi hàm để xóa trắng các control input
-                        // ClearInputs(); 
                     }
                     else
                     {
-                        MessageBox.Show("Không thể thêm Vật Liệu. Vui lòng kiểm tra lại dữ liệu nhập.");
+
+                        string insertQuery = @"Insert into VatLieu( 
+TenVatLieu,DonViTinh,GiaNhap,GiaBan,SoLuongTon,MaNhaCungCap)
+Values(
+@TenVatLieu,@DonViTinh,@GiaNhap,@GiaBan,@SoluongTon,@MaNhaCungCap)";
+                        using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@TenVatLieu", tenVLMoi);
+                            cmd.Parameters.AddWithValue("@GiaNhap", giaN);
+                            cmd.Parameters.AddWithValue("@MaVatLieu ", maVLMoi);
+                            cmd.Parameters.AddWithValue("@DonViTinh", DonVT);
+                            cmd.Parameters.AddWithValue("@GiaBan", giaB);
+                            cmd.Parameters.AddWithValue("@SoLuongTon", soLT);
+                            cmd.Parameters.AddWithValue("MaNhaCungCap", NhaCC);
+                            
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Thêm vật liệu thành công!");
+
+                                // 5. Tải lại DataGridView sau khi thêm
+                                dgvVL.DataSource = LoadData();
+
+                                // (Tùy chọn) Gọi hàm để xóa trắng các control input
+                                // ClearInputs(); 
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thể thêm Vật Liệu. Vui lòng kiểm tra lại dữ liệu nhập.");
+                            }
+
+                        }
+
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -96,6 +115,7 @@ Values(
             txtBan.Clear();
             txtDonVT.Clear();
             txtNhap.Clear();
+
 
         }
 
@@ -107,26 +127,34 @@ Values(
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-        }
+ 
+            }
+
+
+       
+    
+       
 
         private void btnGan_Click(object sender, EventArgs e)
         {
             try
             {
-                string  maVLMoi = txtmaVL.Text;
+                string maVLmoi =txtmaVL.Text;
                 string tenVLMoi = txttenVL.Text;
                 decimal giaN = decimal.Parse(txtNhap.Text);
                 decimal giaB = decimal.Parse(txtBan.Text);
                 string DonVT = txtDonVT.Text;
                 int NhaCC = int.Parse(txtNCC.Text);
                 int soLT = int.Parse(txtSLT.Text);
+                
                 string updatequery = ("update VatLieu set TenVatLieu=@TenVatLieu,DonViTinh=@DonViTinh,GiaBan=@GiaBan,GiaNhap=@GiaNhap,SoLuongTon=@SoLuongTon,MaNhaCungCap=@MaNhaCungCap where MaVatLieu=@MaVatLieu");
                 using (SqlCommand cmd = new SqlCommand(updatequery, conn))
                 {
+                    cmd.Parameters.AddWithValue("@MaVatLieu", maVLmoi);
+
                     cmd.Parameters.AddWithValue("@TenVatLieu", tenVLMoi);
-                    cmd.Parameters.AddWithValue("@VatLieu", tenVLMoi);
                     cmd.Parameters.AddWithValue("@DonViTinh", DonVT);
-                    cmd.Parameters.AddWithValue("@GiaNhap", tenVLMoi);
+                    cmd.Parameters.AddWithValue("@GiaNhap", giaN);
                     cmd.Parameters.AddWithValue("@GiaBan", giaB);
                     cmd.Parameters.AddWithValue("@SoLuongTon", soLT);
                     cmd.Parameters.AddWithValue("MaNhaCungCap", NhaCC);
@@ -134,13 +162,13 @@ Values(
                     if (rowsAffected > 0)
                     {
 
-                        MessageBox.Show("Cập nhật học sinh thành công!");
+                        MessageBox.Show("Cập nhật Vật liệu  thành công!");
                         // 4. Tải lại DataGridView
                         dgvVL.DataSource = LoadData();
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy học sinh để sửa hoặc dữ liệu không thay đổi!");
+                        MessageBox.Show("Không tìm thấy Vật liệu  để sửa hoặc dữ liệu không thay đổi!");
 
                     }
 
@@ -151,13 +179,13 @@ Values(
                 MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message);
 
             }
+
             txttenVL.Clear();
             txtNCC.Clear();
             txtSLT.Clear();
             txtBan.Clear();
             txtDonVT.Clear();
             txtNhap.Clear();
-
 
         }
 

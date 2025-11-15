@@ -172,6 +172,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCTN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCTN.Designer.cs">
+      <DependentUpon>FormCTN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCTX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCTX.Designer.cs">
+      <DependentUpon>FormCTX.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +195,18 @@
     </Compile>
     <Compile Include="FormKhoHang.Designer.cs">
       <DependentUpon>FormKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNCC.Designer.cs">
+      <DependentUpon>FormNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThanhVien.Designer.cs">
+      <DependentUpon>FormThanhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVL.cs">
       <SubType>Form</SubType>
@@ -200,11 +224,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCTX.resx">
+      <DependentUpon>FormCTX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKhoHang.resx">
       <DependentUpon>FormKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNCC.resx">
+      <DependentUpon>FormNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThanhVien.resx">
+      <DependentUpon>FormThanhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVL.resx">
       <DependentUpon>FormVL.cs</DependentUpon>
